@@ -44,8 +44,9 @@ def narrate(text, pause_time=2):
     print(text)
     time.sleep(pause_time)
 
-def show_guidelines():
+def game_guidelines():
     """Display game guidelines and rules."""
+    # TODO: Review and edit the RULES and HOW TO PLAY sections
     print_section("GAME GUIDELINES & RULES")
     print("Welcome, brave adventurer!")
     print()
@@ -73,7 +74,7 @@ def play_game():
     clear_screen()
     print_section("Welcome to the choose your own adventure game!")
     time.sleep(3)
-    show_guidelines()
+    game_guidelines()
     narrate("You are in a room with two doors. One on the right and one on the left.", 3)
     print_divider()
     
@@ -116,12 +117,15 @@ def play_vase_path():
     print_divider()
     narrate("You examine the vase and find nothing out of the ordinary about the flowers. The flowers are the color of blood.", 3)
     # TODO: Add more story content for the vase path
+    # TODO: Implement branching choices for vase path
 
 def play_table_path():
     """Handle the table examination."""
     print_divider()
     narrate("You examine the table and find a note.", 3)
     # TODO: Add more story content for the table path
+    # TODO: Implement what the note says
+    # TODO: Add branching choices based on note discovery
 
 def play_bookshelf_path():
     """Handle the bookshelf examination."""
@@ -145,6 +149,8 @@ def play_downstairs_path():
     print_divider()
     narrate("You descend the stairs and find yourself in a dark basement.", 3)
     # TODO: Add more story content for the downstairs path
+    # TODO: Implement basement exploration and choices
+    # TODO: Create basement ending scenarios
 
 def play_upstairs_path():
     """Handle going upstairs."""
@@ -183,6 +189,8 @@ def play_left_door():
     print_divider()
     narrate("You find yourself entering another room with a single table in the center.", 3)
     # TODO: Add more story content for the left door path
+    # TODO: Implement left door room exploration
+    # TODO: Add choices and branching paths for left door
 
 # Main game loop
 if __name__ == "__main__":
