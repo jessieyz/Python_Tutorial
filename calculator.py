@@ -36,6 +36,38 @@ def min_value(*numbers):
         return None
     return min(numbers)
 
+def factorial(n):
+  if n == 0 or n == 1:
+    return 1
+  else:
+    return n * factorial(n - 1)
+
+def power(base, exponent):
+    if exponent == 0:
+        return 1
+    else:
+        return base * power(base, exponent - 1)
+
+def prime_factorization(n):
+    """Return the prime factorization of n as a list of prime factors"""
+    n = int(n)
+    if n <= 1:
+        return []
+    
+    factors = []
+    divisor = 2
+    
+    while divisor * divisor <= n:
+        while n % divisor == 0:
+            factors.append(divisor)
+            n //= divisor
+        divisor += 1
+    
+    if n > 1:
+        factors.append(n)
+    
+    return factors
+
 # TODO: add more functions for other operations
 
 def main():
@@ -50,37 +82,64 @@ def main():
         print("4. Divide")
         print("5. Max")
         print("6. Min")
-        print("7. Exit")
+        print("7. Factorial")
+        print("8. Power")
+        print("9. Prime Factorization")
+        print("10. Exit")
 
         # Get the user's operation choice
-        choice = input("\nEnter your choice (1-7): ")
+        choice = input("\nEnter your choice (1-10): ")
 
-        # Check if user wants to exit
-        if choice == "7":
-            print("Exiting the calculator. Goodbye!")
-            break
-
-        # Validate that the choice is one of the valid operations (1-6)
-        if choice not in ["1", "2", "3", "4", "5", "6"]:
+        # Validate that the choice is one of the valid operations (1-10)
+        if choice not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
             print("Invalid choice. Please try again.")
             continue
 
-        # Keep asking for numbers until valid input is provided
-        while True:
-            inputNumbers = input("Enter numbers separated by spaces: ")
-            try:
-                # Convert input string to list of floats
-                inputNumbers = list(map(float, inputNumbers.split()))
-                # Check if the list is empty
-                if not inputNumbers:
-                    print("Invalid input. Please enter at least one number.")
+        # Check if user wants to exit
+        if choice == "10":
+            print("Exiting the calculator. Goodbye!")
+            break
+
+        # Determine the input prompt based on the operation choice
+        if choice == "7":
+            prompt = "Enter a number: "
+        elif choice == "2":
+            prompt = "Enter numbers separated by spaces (all numbers after the first will be subtracted from the first): "
+        elif choice == "4":
+            prompt = "Enter numbers separated by spaces (all numbers after the first will be divided from the first): "
+        elif choice == "9":
+            prompt = "Enter a number: "
+        elif choice == "8":
+            # For power operation, get base and exponent separately
+            while True:
+                try:
+                    base = float(input("Enter base: "))
+                    exponent = float(input("Enter exponent: "))
+                    inputNumbers = [base, exponent]
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter valid numbers.")
                     continue
-                # Exit the loop if numbers are valid
-                break
-            except ValueError:
-                # Handle case where conversion to float fails
-                print("Invalid input. Please enter numbers separated by spaces.")
-                continue
+        else:
+            prompt = "Enter numbers separated by spaces: "
+
+        # Keep asking for numbers until valid input is provided
+        if choice != "8":
+            while True:
+                inputNumbers = input(prompt)
+                try:
+                    # Convert input string to list of floats
+                    inputNumbers = list(map(float, inputNumbers.split()))
+                    # Check if the list is empty
+                    if not inputNumbers:
+                        print("Invalid input. Please enter at least one number.")
+                        continue
+                    # Exit the loop if numbers are valid
+                    break
+                except ValueError:
+                    # Handle case where conversion to float fails
+                    print("Invalid input. Please enter numbers separated by spaces.")
+                    continue
 
         # Perform the selected operation based on the choice
         if choice == "1":
@@ -95,6 +154,25 @@ def main():
             print("\nResult:", max_value(*inputNumbers))
         elif choice == "6":
             print("\nResult:", min_value(*inputNumbers))
+        elif choice == "7":
+            if len(inputNumbers) != 1:
+                print("Invalid input. Please enter exactly one number.")
+            else:
+                print("\nResult:", factorial(int(inputNumbers[0])))
+        elif choice == "8":
+            if len(inputNumbers) != 2:
+                print("Invalid input. Please enter exactly two numbers.")
+            else:
+                print("\nResult:", power(int(inputNumbers[0]), int(inputNumbers[1])))
+        elif choice == "9":
+            if len(inputNumbers) != 1:
+                print("Invalid input. Please enter exactly one number.")
+            else:
+                factors = prime_factorization(inputNumbers[0])
+                if factors:
+                    print("\nPrime Factorization:", " × ".join(map(str, factors)))
+                else:
+                    print("\nInvalid input. Please enter a number greater than 1.")
         else:
             # This else clause should never execute due to earlier validation
             print("\nInvalid choice. Please try again.")
