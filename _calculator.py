@@ -68,6 +68,22 @@ def prime_factorization(n):
     
     return factors
 
+def fibonacci_sequence(n):
+    """Return the Fibonacci sequence up to the nth number and the nth value."""
+    n = int(n)
+    if n < 0:
+        return [], None
+    if n == 0:
+        return [0], 0
+    if n == 1:
+        return [0, 1], 1
+
+    sequence = [0, 1]
+    while len(sequence) <= n:
+        sequence.append(sequence[-1] + sequence[-2])
+
+    return sequence, sequence[n]
+
 # TODO: add more functions for other operations
 
 def main():
@@ -85,30 +101,29 @@ def main():
         print("7. Factorial")
         print("8. Power")
         print("9. Prime Factorization")
-        print("10. Exit")
+        print("10. Fibonacci Sequence")
+        print("11. Exit")
 
         # Get the user's operation choice
-        choice = input("\nEnter your choice (1-10): ")
+        choice = input("\nEnter your choice (1-11): ")
 
-        # Validate that the choice is one of the valid operations (1-10)
-        if choice not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
+        # Validate that the choice is one of the valid operations (1-11)
+        if choice not in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]:
             print("Invalid choice. Please try again.")
             continue
 
         # Check if user wants to exit
-        if choice == "10":
+        if choice == "11":
             print("Exiting the calculator. Goodbye!")
             break
 
         # Determine the input prompt based on the operation choice
-        if choice == "7":
+        if choice == "7" or choice == "9" or choice == "10":
             prompt = "Enter a number: "
         elif choice == "2":
             prompt = "Enter numbers separated by spaces (all numbers after the first will be subtracted from the first): "
         elif choice == "4":
             prompt = "Enter numbers separated by spaces (all numbers after the first will be divided from the first): "
-        elif choice == "9":
-            prompt = "Enter a number: "
         elif choice == "8":
             # For power operation, get base and exponent separately
             while True:
@@ -173,6 +188,15 @@ def main():
                     print("\nPrime Factorization:", " × ".join(map(str, factors)))
                 else:
                     print("\nInvalid input. Please enter a number greater than 1.")
+        elif choice == "10":
+            if len(inputNumbers) != 1:
+                print("Invalid input. Please enter exactly one number.")
+            elif inputNumbers[0] < 0 or not inputNumbers[0].is_integer():
+                print("Invalid input. Please enter a non-negative whole number.")
+            else:
+                sequence, nth_value = fibonacci_sequence(int(inputNumbers[0]))
+                print("\nFibonacci Sequence:", ", ".join(map(str, sequence)))
+                print(f"{int(inputNumbers[0])}th Fibonacci Number:", nth_value)
         else:
             # This else clause should never execute due to earlier validation
             print("\nInvalid choice. Please try again.")
