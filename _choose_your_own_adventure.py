@@ -75,6 +75,7 @@ def play_game():
     print_section("Welcome to the choose your own adventure game!")
     time.sleep(3)
     game_guidelines()
+    time.sleep(5)
     narrate("You are in a room with two doors. One on the right and one on the left.", 3)
     print_divider()
     
@@ -198,7 +199,7 @@ if __name__ == "__main__":
         ask_again = play_game()
         if ask_again:
             time.sleep(1)
-            play_again = input("\nWould you like to play again? (yes/no): ").strip().lower()
+            play_again = get_choice("\nWould you like to play again? (yes/no): ", ["yes", "no"])
             if play_again == "yes":
                 print("Restarting the game...")
                 time.sleep(1)

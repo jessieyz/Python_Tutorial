@@ -1,3 +1,4 @@
+import math
 import time
 
 def get_choice(prompt):
@@ -14,7 +15,10 @@ def get_choice(prompt):
         try:
             choice = input(prompt).strip()
             # Convert to float (accepts both integers and decimals)
-            return float(choice)
+            number = float(choice)
+            if math.isfinite(number):
+                return number
+            print("Invalid input. Please enter a finite number.")
         except ValueError:
             print("Invalid input. Please enter a valid number or decimal.")
 
@@ -60,7 +64,10 @@ def main():
     
     # Get conversion type from user
     conversion_type = input("\nEnter the conversion type (1-4): ").strip()
-    
+    if conversion_type not in {"1", "2", "3", "4"}:
+        print("\nInvalid conversion type. Please enter 1-4.")
+        return
+
     # Get the number to convert
     number = get_choice("Enter the number to convert: ")
     
@@ -77,8 +84,6 @@ def main():
     elif conversion_type == "4":
         result = celsius_to_fahrenheit(number)
         print(f"\nResult: {number}°C = {result:.10f}".rstrip('0').rstrip('.') + "°F")
-    else:
-        print("\nInvalid conversion type. Please enter 1-4.")
 
 if __name__ == "__main__":
     while True:
