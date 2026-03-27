@@ -1,5 +1,6 @@
 import time 
 import os
+import datetime
 
 def clear_screen():
     """Clear the terminal screen."""
@@ -48,7 +49,9 @@ def game_guidelines():
     """Display game guidelines and rules."""
     # TODO: Review and edit the RULES and HOW TO PLAY sections
     print_section("GAME GUIDELINES & RULES")
+    time.sleep(2)
     print("Welcome, brave adventurer!")
+    time.sleep(2)
     print()
     print("GAME CONTEXT:")
     print("You find yourself trapped in a mysterious place with no memory of how you got there.")
@@ -73,6 +76,9 @@ def play_game():
     """Run one complete game. Returns True if player wants to play again, False otherwise."""
     clear_screen()
     print_section("Welcome to the choose your own adventure game!")
+    time.sleep(3)
+    x = datetime.datetime.now()
+    print(f"Current date and time: {x.strftime('%Y-%m-%d %H:%M:%S')}")
     time.sleep(3)
     game_guidelines()
     time.sleep(5)
