@@ -1,0 +1,46 @@
+{
+  "8H Sappenfield Geometry": {
+    "names": [
+      "Agarwal, Aarit",
+      "Allderdice, Ben",
+      "Finley, Lucy",
+      "George, Ryan",
+      "Kashyap, Amogh",
+      "Kim, Justin",
+      "Kung, Evan",
+      "Lamka, Peyton",
+      "MacArthur, Jillian",
+      "Mohile, Shaarav",
+      "Patel, Devansh",
+      "Regan, Paloma",
+      "Remick, Olivia",
+      "Self, Emma",
+      "Sullivan, Rhiannon",
+      "Wall, Spencer",
+      "Wray, Ansel",
+      "Youngerman, Blake",
+      "Zhang, Jessie"
+    ],
+    "genders": {
+      "Agarwal, Aarit": "boy",
+      "Allderdice, Ben": "boy",
+      "Finley, Lucy": "girl",
+      "George, Ryan": "boy",
+      "Kashyap, Amogh": "boy",
+      "Kim, Justin": "boy",
+      "Kung, Evan": "boy",
+      "Lamka, Peyton": "girl",
+      "MacArthur, Jillian": "girl",
+      "Mohile, Shaarav": "boy",
+      "Patel, Devansh": "boy",
+      "Regan, Paloma": "girl",
+      "Remick, Olivia": "girl",
+      "Self, Emma": "girl",
+      "Sullivan, Rhiannon": "girl",
+      "Wall, Spencer": "boy",
+      "Wray, Ansel": "non-binary",
+      "Youngerman, Blake": "boy",
+      "Zhang, Jessie": "girl"
+    }
+  }
+}

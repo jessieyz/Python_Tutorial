@@ -1,0 +1,36 @@
+{
+  "8G Wu": {
+    "names": [
+      "Bhupathiraju, Arjun",
+      "Costello, Lochlan",
+      "Dobos, Ana",
+      "Eden, Evan",
+      "Heinecke, Lanna",
+      "Sadakah, Lana",
+      "Sanders, Ren",
+      "Silon, Burke",
+      "Sullivan, Rhiannon",
+      "Tibayan, Helo",
+      "White, Connor",
+      "Wilkins, Miles",
+      "Wilson, Dainya",
+      "Zhang, Jessie"
+    ],
+    "genders": {
+      "Bhupathiraju, Arjun": "boy",
+      "Costello, Lochlan": "boy",
+      "Dobos, Ana": "girl",
+      "Eden, Evan": "boy",
+      "Heinecke, Lanna": "girl",
+      "Sadakah, Lana": "girl",
+      "Sanders, Ren": "boy",
+      "Silon, Burke": "boy",
+      "Sullivan, Rhiannon": "girl",
+      "Tibayan, Helo": "boy",
+      "White, Connor": "boy",
+      "Wilkins, Miles": "boy",
+      "Wilson, Dainya": "girl",
+      "Zhang, Jessie": "girl"
+    }
+  }
+}

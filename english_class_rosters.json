@@ -1,0 +1,42 @@
+{
+  "8C Blackall": {
+    "names": [
+      "Agarwal, Aarit",
+      "Bhupathiraju, Arjun",
+      "Chen, Teal",
+      "Costello, Lochlan",
+      "Dobos, Ana",
+      "Endicott, Rosalie",
+      "Federer, Aiden",
+      "Kienle, Evan",
+      "Kim, Justin",
+      "Mertens, Caelen",
+      "Nadig, Anjali",
+      "Sanders, Ren",
+      "Sinkford, Cannon",
+      "Tangvald, Mason",
+      "Tibayan, Helo",
+      "Wilson, Dainya",
+      "Zhang, Jessie"
+    ],
+    "genders": {
+      "Agarwal, Aarit": "boy",
+      "Bhupathiraju, Arjun": "boy",
+      "Chen, Teal": "girl",
+      "Costello, Lochlan": "boy",
+      "Dobos, Ana": "girl",
+      "Endicott, Rosalie": "girl",
+      "Federer, Aiden": "boy",
+      "Kienle, Evan": "boy",
+      "Kim, Justin": "boy",
+      "Mertens, Caelen": "boy",
+      "Nadig, Anjali": "girl",
+      "Sanders, Ren": "boy",
+      "Sinkford, Cannon": "boy",
+      "Tangvald, Mason": "boy",
+      "Tibayan, Helo": "boy",
+      "Wilson, Dainya": "girl",
+      "Zhang, Jessie": "girl"
+    }
+  }
+}
